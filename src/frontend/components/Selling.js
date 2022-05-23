@@ -53,16 +53,12 @@ const Selling = ({ marketplace, nft }) => {
                   <Col key={index} className="overflow-hidden">
                     <Card style={{ width: '15rem' }}>
                       <Card.Img variant='top' src={replaceIpfsPrefix(item.image)} />
-                      <Card.Body color="secondary">
-                          <Card.Title>{item.name}</Card.Title>
-                          <Card.Text>
-                            Token Id: {item.tokenId.toNumber()}
-                            <br/>
-                            Selling Price: {ethers.utils.formatEther(item.price)} ETH
-                          </Card.Text>
-                      </Card.Body>
                       <Card.Footer>
                         <div className='d-grid'>
+                          <Card.Title>{item.name} #{item.tokenId.toNumber()}</Card.Title>
+                          <Card.Text>
+                            Selling Price: {ethers.utils.formatEther(item.price)} ETH
+                          </Card.Text>
                           <Button value={item.itemId} onClick={handleDelistItem}>
                             Delist item
                           </Button>

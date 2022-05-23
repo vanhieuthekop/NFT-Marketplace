@@ -91,16 +91,11 @@ export default function MyListedItems({ marketplace, nft, account }) {
           <Row xs={1} md={2} lg={4} className="g-4 py-3">
             {myTokens.map((token) => (
               <Col key={token.tokenId} className="overflow-hidden">
-                <Card style={{ width: '17rem' }}>
+                <Card style={{ width: '15rem' }}>
                   <Card.Img variant="top" src={replaceIpfsPrefix(token.image)} ></Card.Img>
-                  <Card.Body>
-                    <Card.Title>{token.name}</Card.Title>
-                    <Card.Text>{token.description}</Card.Text>
-                    <Card.Text>
-                      Token Id: {token.tokenId}
-                    </Card.Text>
-                  </Card.Body>
                   <Card.Footer>
+                  <Card.Title>{token.name} #{token.tokenId}</Card.Title>
+                  <Card.Text>{token.description}</Card.Text>
                     {
                       isOperator ? <Button style={{ margin: "0 1rem" }}  onClick={handleShowSellModal} value={token.tokenId}> Sell </Button> 
                         : <Button style={{ margin: "0 1rem" }}  onClick={approveOperator} > Approve </Button>
