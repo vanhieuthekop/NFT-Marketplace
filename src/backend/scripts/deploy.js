@@ -10,12 +10,6 @@ const items = [
   "ipfs://bafyreide2k4ndcmbvu4oh6xff464hhvyyp2rh7j3il3b37n52wqaa7r3aq/metadata.json",
   "ipfs://bafyreid5pidaquxt6clj7sqmgbon5go7zdi2k6qhkocjgmfthoz7zcty5i/metadata.json",
   "ipfs://bafyreiej4dheryfmbqyv2zwvia6em6dren74d6sz6ufmp2kqe5hs32snuu/metadata.json",
-  "ipfs://bafyreihdelytrcau2xq6rt6nakwbg6dqa2ayecpr43chsxgl74s7tfadjq/metadata.json",
-  "ipfs://bafyreib4jvbanzgu44zjzmgapnq2afafeogl7wsvxkmmiikwwqkqur6h7i/metadata.json",
-  "ipfs://bafyreicybr7zo2hpty3ef4zg66z4aagljxi22iixli7sokx7yq35vcaux4/metadata.json",
-  "ipfs://bafyreihxbjpobhwgr627qkfqtdgejexblynn7sfwupplvkp27sta6edxz4/metadata.json",
-  "ipfs://bafyreiggba74ylqlzvmhpptfwq22krjlqcqitv5dlnqosq7ntm7wvtirzu/metadata.json",
-  "ipfs://bafyreibjcj5xynoajmryixa77z2zh2aolprmzdm6q7d7ztmcbrp3rbr47u/metadata.json"
 ]
 
 const moment = require("moment");
@@ -70,7 +64,7 @@ async function createSampleData(nft, marketplace, lotteryManagement, deployer) {
   }
 
   await nft.connect(deployer).setApprovalForAll(lotteryManagement.address, true);
-  await lotteryManagement.createNewLottery(9, ethers.utils.parseEther("0.00001"), moment().unix(), moment().add(5, "minutes").unix());
+  // await lotteryManagement.createNewLottery(9, ethers.utils.parseEther("0.00001"), moment().unix(), moment().add(5, "minutes").unix());
 
   console.log("Create new lottery successfully!");
 }

@@ -126,6 +126,7 @@ contract LotteryManagement is KeeperCompatible{
   function callbackSetWinner(uint256 randomNumber, uint256 lotteryId) external {
     require(msg.sender == address(vrfLotteryConsumer), "Only consumer can call callback set winner!");
     LotteryItem storage lotteryItem = listLotteries[lotteryId];
+    require(lotteryItem.players.length > 0, "No one plays the lottery");
     uint256 randomIndex = randomNumber % lotteryItem.players.length;
     lotteryItem.winner = lotteryItem.players[randomIndex];
  

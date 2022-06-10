@@ -62,7 +62,6 @@ export default function MyListedItems({ marketplace, nft, account }) {
   const handleTransferNFT = async () => {
     try {
       await nft.transferFrom(account, transferAddress, tokenId);
-      console.log("TEST ", account, transferAddress, tokenId);
       
       setShowTransferModal(false)
     } catch (error) {
@@ -98,7 +97,7 @@ export default function MyListedItems({ marketplace, nft, account }) {
                   <Card.Text>{token.description}</Card.Text>
                     {
                       isOperator ? <Button style={{ margin: "0 1rem" }}  onClick={handleShowSellModal} value={token.tokenId}> Sell </Button> 
-                        : <Button style={{ margin: "0 1rem" }}  onClick={approveOperator} > Approve </Button>
+                        : <Button style={{ margin: "0 1rem" }}  onClick={approveOperator} > Approve To Sell </Button>
                     }
                     <Button style={{ margin: "0 1rem" }}  onClick={handleShowTransferModal} value={token.tokenId}> Transfer </Button> 
                   </Card.Footer>
