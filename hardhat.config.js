@@ -1,4 +1,6 @@
 require("@nomiclabs/hardhat-waffle");
+require("hardhat-gas-reporter");
+require("@nomiclabs/hardhat-etherscan");
 
 task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
   const ethers = hre.ethers;
@@ -24,5 +26,10 @@ module.exports = {
       gas: 2100000,
       gasPrice: 8000000000
     }
+  },
+  etherscan: {
+    // Your API key for Etherscan
+    // Obtain one at https://etherscan.io/
+    apiKey: "KZI6SYX2NGGFRBGP75WXY9QBBTQTT7PY78"
   }
 };
